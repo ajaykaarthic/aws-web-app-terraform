@@ -64,6 +64,4 @@ To get started with this project, follow these steps:
 - Modify the Terraform configurations (`*.tf`) according to your infrastructure requirements.
 - Always review the Terraform plan before applying changes to your infrastructure.
 - Ensure proper credentials and permissions are set for deploying infrastructure.
-
-Feel free to contribute by suggesting improvements, reporting issues, or adding new features!
 ---
