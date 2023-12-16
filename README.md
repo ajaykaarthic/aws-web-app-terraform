@@ -1,5 +1,3 @@
-Certainly! Here's the updated section to include in the README:
-
 ---
 # DevOps Practice with Terraform
 
