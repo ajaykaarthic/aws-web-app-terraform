@@ -6,7 +6,11 @@ This repository contains a basic web application demonstrating DevOps practices 
 ## Overview
 
 The project aims to showcase essential Terraform commands to manage infrastructure effectively:
-
+- **Initialization**: Initializes Terraform project
+  ```bash
+  terraform init
+  ```
+  
 - **Validation**: Check if the Terraform configuration is valid.
   ```bash
   terraform validate
