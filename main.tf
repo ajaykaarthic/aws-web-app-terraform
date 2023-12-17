@@ -2,11 +2,11 @@ provider "aws" {
   region = "us-east-1"
 }
 
-variable "server_port" {
-  description = "Port the server will use for the HTTP requests"
-  type        = number
-  default     = 80
-}
+# variable "server_port" {
+#   description = "Port the server will use for the HTTP requests"
+#   type        = number
+#   default     = 80
+# }
 
 #####################################################
 ############### VPC and SUBNETS #####################
@@ -26,19 +26,19 @@ data "aws_subnets" "default" {
 #####################################################
 ############### SECURITY GROUPS #####################
 #####################################################
-resource "aws_security_group" "instance" {
+# resource "aws_security_group" "instance" {
 
-  name = "terraform-example-instance"
-  ingress {
-    from_port   = var.server_port
-    to_port     = var.server_port
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-}
+#   name = "terraform-example-instance"
+#   ingress {
+#     from_port   = var.server_port
+#     to_port     = var.server_port
+#     protocol    = "tcp"
+#     cidr_blocks = ["0.0.0.0/0"]
+#   }
+# }
 
 resource "aws_security_group" "alb" {
-  name = "terraform-example-alb"
+  name = "my-web-app-alb"
 
   ingress {
     from_port   = 80
@@ -74,23 +74,23 @@ resource "aws_security_group" "ecs_service" {
 }
 
 
-resource "aws_launch_configuration" "example" {
-  image_id        = "ami-0759f51a90924c166"
-  instance_type   = "t2.micro"
-  security_groups = [aws_security_group.instance.id]
+# resource "aws_launch_configuration" "example" {
+#   image_id        = "ami-0759f51a90924c166"
+#   instance_type   = "t2.micro"
+#   security_groups = [aws_security_group.instance.id]
 
-  user_data = <<-EOF
-              #!/bin/bash
-              echo "Hello, World" > index.html
-              nohup busybox httpd -f -p ${var.server_port} &
-              EOF
-  lifecycle {
-    create_before_destroy = true
-  }
-}
+#   user_data = <<-EOF
+#               #!/bin/bash
+#               echo "Hello, World" > index.html
+#               nohup busybox httpd -f -p ${var.server_port} &
+#               EOF
+#   lifecycle {
+#     create_before_destroy = true
+#   }
+# }
 
 resource "aws_lb_target_group" "asg" {
-  name        = "terraform-asg-example"
+  name        = "my-web-app-asg"
   port        = 80
   protocol    = "HTTP"
   vpc_id      = data.aws_vpc.default.id
@@ -124,15 +124,15 @@ resource "aws_lb_target_group" "asg" {
 #   }
 # }
 
-resource "aws_lb" "example" {
-  name               = "terraform-asg-example"
+resource "aws_lb" "load_balancer" {
+  name               = "my-web-app"
   load_balancer_type = "application"
   subnets            = data.aws_subnets.default.ids
   security_groups    = [aws_security_group.alb.id]
 }
 
 resource "aws_lb_listener" "http" {
-  load_balancer_arn = aws_lb.example.arn
+  load_balancer_arn = aws_lb.load_balancer.arn
   port              = 80
   protocol          = "HTTP"
 
@@ -232,6 +232,6 @@ resource "aws_ecs_service" "ecs" {
 }
 
 output "alb_dns_name" {
-  value       = aws_lb.example.dns_name
+  value       = aws_lb.load_balancer.dns_name
   description = "The domain name of the load balancer"
 }
