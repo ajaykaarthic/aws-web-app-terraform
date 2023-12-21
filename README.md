@@ -3,6 +3,13 @@
 
 This repository contains a basic web application demonstrating DevOps practices utilizing Infrastructure as Code (IaC) with Terraform.
 
+## Jenkins Workflow
+<img width="679" alt="image" src="https://github.com/ajaykaarthic/my-web-app/assets/33996820/e981b973-25fe-41a5-8025-a6149d27ca84">
+
+## User Workflow
+<img width="754" alt="image" src="https://github.com/ajaykaarthic/my-web-app/assets/33996820/fba5c08c-145a-4f0e-addc-8844ac349a9e">
+
+
 ## Overview
 
 The project aims to showcase essential Terraform commands to manage infrastructure effectively:
