@@ -6,7 +6,7 @@ app.use(express.static('public'));
 app.set('view engine', 'html');
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/src/index.html');
+  res.sendFile(__dirname + '/views/index.html');
 });
 
 app.listen(port, () => {
