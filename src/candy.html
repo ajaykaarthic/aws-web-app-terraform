@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <title>Candy</title>
+        <link rel="stylesheet" type="text/css" href="myStyle.css">
+        <script src="candy.js"></script>
+    </head>
+    <body>
+        <div class = "header">
+            <h1 id="heading"> Aj Groceries</h1>
+            <p id="headline"> Providing Fresh and Quality Products Since 2023</p>
+            <div id="datetime"></div>
+        </div>
+        <div class = "row">
+            <div class = "topnav">
+                    <a href = "main.html">Home</a>
+                    <a href = "freshProducts.html">Fresh products</a>
+                    <a href = "frozen.html">Frozen</a>
+                    <a href = "pantry.html">Pantry</a>
+                    <a href = "breakfastAndCereal.html">Breakfast & Cereal</a>
+                    <a href = "baking.html">Baking</a>
+                    <a href = "snacks.html">Snacks</a>
+                    <a href = "candy.html">Candy</a>
+                    <a href = "specialtyShops.html">Specialty shops</a>
+                    <a href = "Deals.html">Deals</a>
+                    <a href = "myAccount.html">My account</a>
+                    <a href = "aboutUs.html">About us</a>
+                    <a href = "contactUs.html">Contact us</a>
+                    <a href = "cart.html">Cart</a>
+            </div>
+        </div>
+        <div class="category-selection">
+            <label for="category">Select a category:</label>
+            <select id="category">
+                <option value="all">Shop All</option>
+                <option value="candy">Candy</option>
+                <option value="softChocolate">Lollipop</option>
+            </select>
+        </div>
+        <div class = "row">
+        <div class = "column middle">
+            <input type="text" id="searchInput" onkeyup="searchInventory()" placeholder="Search for candy..."> <button id="search" name="search" onclick="searchInventory()">Search</button>
+        <div class="product-container" id="productContainer">
+        </div>
+        </div>
+        </div>
+        <!-- <div class = "row"> -->
+            <!-- <div class = "column side">
+                <h3> Deal of the day </h3>
+                <table>    
+                    <tr>
+                        <td>
+                            <img src="../images/candy/hersheys.jpeg">
+                            <h3>Hersheys</h3>
+                            <p>$0.99</p>
+                        </td>
+                    </tr>
+                </table>
+            </div> -->
+            <!-- <div class = "column middle">
+                <h2 style="text-align: center;">Candy</h2>
+                <input type="text" id="searchInput" onkeyup="search()" placeholder="Search for candy..."> <button name="search" onclick="search()">Search</button>
+            <table id="candyTable">    
+                <tr>
+                    <td>
+                        <img src="../images/candy/lollipop.jpeg">
+                        <h3>Lollipop</h3>
+                        <p>$0.99</p>
+                    </td>
+                    <td>
+                        <img src="../images/candy/hersheys.jpeg">
+                        <h3>Hersheys</h3>
+                        <p>$0.99</p>
+                    </td>
+                    <td>
+                        <img src="../images/candy/gummybars.jpeg">
+                        <h3>Gummy bars</h3>
+                        <p>$1.99</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../images/candy/strippedcandy.jpeg">
+                        <h3>Stripped candy</h3>
+                        <p>$0.49</p>
+                    </td>
+                </tr>
+            </table>
+            </div>
+        </div> -->
+        <div class = "footer">
+            <div class = "formContainer">
+                <p>Need help? we'll get back to you</p>
+                <form>
+                    <label for="fname">First Name:</label>
+                    <input type="text" id="fname" name="firstname">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                    <input type="submit" value="Submit">
+                </form>
+                <a id="subscribe" href="aboutUs.html">Thank you>
+            </div>
+            <p id="netid"><em>Ajay Kaarthic Jeysree,</em> <strong>AXJ190059</strong></p>
+        </div>
+    </body>
+</html>

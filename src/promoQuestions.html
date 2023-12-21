@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specialty Shops</title>
+    <link rel="stylesheet" type="text/css" href="myStyle.css">
+    <script src="index.js"></script>
+</head>
+<body style="text-align: center">
+    <div class = "header">
+        <h1 id="heading"> Aj Groceries</h1>
+        <p id="headline"> Providing Fresh and Quality Products Since 2023</p>
+        <div id="datetime"></div>
+    </div>
+    <div class = "row">
+        <div class = "topnav">
+                <a href = "main.html">Home</a>
+                <a href = "freshProducts.html">Fresh products</a>
+                <a href = "frozen.html">Frozen</a>
+                <a href = "pantry.html">Pantry</a>
+                <a href = "breakfastAndCereal.html">Breakfast & Cereal</a>
+                <a href = "baking.html">Baking</a>
+                <a href = "snacks.html">snacks</a>
+                <a href = "candy.html">candy</a>
+                <a href = "specialtyShops.html">Specialty shops</a>
+                <a href = "Deals.html">Deals</a>
+                <a href = "myAccount.html">My account</a>
+                <a href = "aboutUs.html">About us</a>
+                <a href = "contactUs.html">Contact us</a>
+                <a href = "cart.html">Cart</a>
+        </div>
+    </div>
+    <h1 style="text-align: center;">Let's see if you qualify for a offer</h1>
+    <div id="questionContainer">
+        <div id="question" style="font-size: 25px;"></div>
+        <form id="answers">
+            <label><input type="radio" name="answer" value="Yes">Yes</label>
+            <label><input type="radio" name="answer" value="No">No</label>
+        </form>
+        <button id="next" style="margin: 10px;">Next</button>
+        <button id="skip" style="margin: 10px;">Skip</button>
+    </div>
+    <div id="resultContainer" style="display:none;">
+        <h2>Qualification:</h2>
+        <p id="qualification"></p>
+        <h2>Offer:</h2>
+        <p id="offer"></p>
+        <h2>Time Spent:</h2>
+        <p id="timeSpent"></p>
+    </div>
+    <button style="margin-top: 10px;" id = "backToShopping" name="backToShopping" onclick="openHTML('specialtyShops.html')">Back to shopping</button>
+    <script src="offer.js"></script>
+</body>
+</html>
